@@ -41,7 +41,9 @@ export class CdkDragDropConnectedSortingExample {
     for (let index = 0; index < numberOfColumns; index++) {
       this.dummy[`col${index}`] = this.testData.slice(
         index * 4,
-        4 * (index + 1)
+        4 * (index + 1) > this.testData.length
+          ? this.testData.length
+          : 4 * (index + 1)
       );
     }
   }
